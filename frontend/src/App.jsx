@@ -47,8 +47,8 @@ function App() {
 			{/* Common component, bc it's not wrapped with Routes */}
 			{authUser && <Sidebar />}
 			<Routes>
-				<Route path='https://x-lite.vercel.app/' element={authUser ? <HomePage /> : <Navigate to='/login' />} />
-				<Route path='https://x-lite.vercel.app/login' element={!authUser ? <LoginPage /> : <Navigate to='/' />} />
+				<Route path='/' element={authUser ? <HomePage /> : <Navigate to='/login' />} />
+				<Route path='/login' element={!authUser ? <LoginPage /> : <Navigate to='/' />} />
 				<Route path='/signup' element={!authUser ? <SignUpPage /> : <Navigate to='/' />} />
 				<Route path='/notifications' element={authUser ? <NotificationPage /> : <Navigate to='/login' />} />
 				<Route path='/profile/:username' element={authUser ? <ProfilePage /> : <Navigate to='/login' />} />
