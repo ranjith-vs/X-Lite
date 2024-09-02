@@ -29,13 +29,6 @@ app.use(express.urlencoded({ extended: true })); // to parse form data(urlencode
 
 app.use(cookieParser());
 
-app.use(cors(
-    {
-        origin: ["x-lite.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
